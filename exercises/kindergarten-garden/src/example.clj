@@ -15,7 +15,7 @@
   ([string]
    (garden string default-students))
   ([string students]
-   (let [students (map #(keyword (clojure.string/lower-case %1)) (sort students))
+   (let [students     (map #(keyword (clojure.string/lower-case %1)) (sort students))
          [front back] (map #(partition 2 %1)
                            (map row-to-seeds (garden-to-rows string)))]
      (zipmap students (map vec
