@@ -1,6 +1,6 @@
 (ns diamond-test
   (:require  [clojure.test :refer [deftest is]]
-             [diamond]))
+             [diamond :refer [diamond]]))
 
 (deftest a-test
   (is (= ["A"]
