@@ -13,11 +13,11 @@
 
 (defn garden
   ([string]
-    (garden string default-students))
+   (garden string default-students))
   ([string students]
-    (let [students (map #(keyword (.toLowerCase %1)) (sort students))
-          [front back] (map #(partition 2 %1)
-                             (map row-to-seeds (garden-to-rows string)))]
-      (zipmap students (map vec
-                          (map flatten
-                             (partition 2 (interleave front back))))))))
+   (let [students (map #(keyword (clojure.string/lower-case %1)) (sort students))
+         [front back] (map #(partition 2 %1)
+                           (map row-to-seeds (garden-to-rows string)))]
+     (zipmap students (map vec
+                           (map flatten
+                                (partition 2 (interleave front back))))))))
